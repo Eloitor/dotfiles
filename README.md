@@ -13,5 +13,4 @@ mkrc -S awesome
 
 # Included dotfiles
 
-
-Window managers: awesome
+Minimal browser with vim keybindings: qutebrowser
