@@ -1,6 +1,10 @@
 # My Dotfiles
 
 I try to minimize what is directly on ~/
+To be able to put the .zsh file in the .config/zsh directory we add the following to ~/.profile
+
+export ZDOTDIR="$HOME/.config/zsh"
+
 
 ## Included dotfiles
 
