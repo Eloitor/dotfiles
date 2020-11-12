@@ -1,21 +1,54 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#neofetch
+neofetch
 
-## The following two lines are needed for the git plugin to work.
-## https://apple.stackexchange.com/questions/296477/my-command-line-says-complete13-command-not-found-compdef
+# FOR TESTING: exec zsh
+# Edit config: open ~/.zshrc in using the default editor specified in $EDITOR
+alias ec="$EDITOR $HOME/.config/zsh/.zshrc"
+
+
+# PLUGINS
 autoload -Uz compinit
 compinit
 
-#source ~/.config/zsh/ohmyzsh/lib/git.zsh
-source ~/.config/zsh/ohmyzsh/plugins/git/git.plugin.zsh
-
-source ~/.config/zsh/ohmyzsh/plugins/docker/_docker
-
+# source ~/.config/zsh/ohmyzsh/plugins/docker/_docker
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# git_super_status
+source ~/.config/zsh/plugins/zsh-git-prompt/zshrc.sh
+# source ~/.config/zsh/ohmyzsh/lib/git.zsh
+# source ~/.config/zsh/ohmyzsh/plugins/git/git.plugin.zsh
+
+# Enable colors and change promt
+autoload -U colors && colors
+setopt prompt_subst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+
+zstyle ':vcs_info:*' enable git cvs svn
+
+#### PROMPT
+
+vcs_info_wrapper() {
+  vcs_info
+  if [ -n "$vcs_info_msg_0_" ]; then
+    echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
+  fi
+}
+
+PS1=" %B%~%{$fg[red]%}"
+PS1+=$'$(git_super_status) '
+#PS1+=$'$(vcs_info_wrapper)'
+PS1+=">>%{$reset_color%}%b "
+export PS1
+
 
 # Automatic navigation to files
 #exec ~/.config/zsh/plugins/z/z.sh
@@ -23,20 +56,12 @@ source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-
 # https://github.com/skywind3000/z.lua
 #eval "$(lua ~/z.lua/z.lua -- init zsh)"
 
-# Enable colors and change promt
-autoload -U colors && colors
-setopt prompt_subst
-PS1=" %B%~%{$fg[red]%}>>%{$reset_color%}%b "
-export PS1
-# Lines configured by zsh-newuser-install
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt beep
 bindkey -v
-# End of lines configured by zsh-newuser-install
-
-# PS1="%~ >> "
 
 # myemacsclient () {
 #    emacsclient -n -e "(if (> (length (frame-list)) 1) 't)" | grep -q t
@@ -47,6 +72,8 @@ bindkey -v
 #     fi
 # }
 # alias em=myemacsclient
+
+# VI MODES
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -69,67 +96,18 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-alias ls="ls --color=auto"
 
+alias ls="ls --color=auto"
 alias vim="nvim"
 alias ..="cd .."
 alias ...="cd ../.."
 
-
-# Sufix aliases
+# Sufix aliases. (default program to open this extensions)
 alias -s pdf=zathura
-
-# bulk association
 alias -s {cs,ts,html}=code
 
-
-# open ~/.zshrc in using the default editor specified in $EDITOR
-alias ec="$EDITOR $HOME/.config/zsh/.zshrc"
-
-# source ~/.zshrc
-alias sc="exec zsh"
-
-function git_color {
-    local git_status="$(git status 2> /dev/null)"
-
-    if [[ $git_status =~ "working directory clean" ]]; then
-        echo -e "%{$fg[red]%}"
-    elif [[ $git_status =~ "Your branch is ahead of" ]]; then
-        echo -e "%{$fg[yellow]%}"
-    elif [[ $git_status =~ "nothing to commit" ]]; then
-        echo -e "%{$fg[green]%}"
-    else
-        echo -e "%{$fg[blue]%}"
-    fi
-}
-
-function git_branch {
-    local git_status="$(git status 2> /dev/null)"
-    local on_branch="On branch ([^${IFS}]*)"
-    local on_commit="HEAD detached at ([^${IFS}]*)"
-
-    if [[ $git_status =~ $on_branch ]];
-    then
-        local branch=${BASH_REMATCH[1]}
-        echo "($branch)"
-    elif [[ $git_status =~ $on_commit ]];
-    then
-        local commit=${BASH_REMATCH[1]}
-        echo "($commit)"
-    fi
-}
-
-# PS1="\[$COLOR_WHITE\]\n[\W]"          # basename of pwd
-#PS1+="$(git_color)"        # colors git status
-#PS1+="$(git_branch)"           # prints current branch
-# PS1+="\[$COLOR_BLUE\]\$\[$COLOR_RESET\] "   # '#' for root, else '$'
-#export PS1
-#
-
+# Arrow keys
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
-
-
-#if [ -e /home/eloi/.nix-profile/etc/profile.d/nix.sh ]; then . /home/eloi/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
