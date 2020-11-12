@@ -1,16 +1,22 @@
-# MY Dotfiles are stored here
+# My Dotfiles
 
-We can use stow or rcm:
+I try to minimize what is directly on ~/
 
+## Included dotfiles
 
-## Stow
+	* qutebrowser
+	* zsh (WIP)
 
+## Install requirements:
 
+pacman -S qutebrowser zsh
 
-## rcm
-mkrc -S awesome
-(treats the full directory as a file)
+## How I collect my dotfiles?
 
-# Included dotfiles
+I use rcm to collect my configuration files in one folder.
 
-Minimal browser with vim keybindings: qutebrowser
+For example if I want to backup the configuration for zsh:
+
+mkrc -S ~/.config/zsh
+
+(With the -S option rcm treats the full directory as a file)
