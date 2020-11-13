@@ -13,7 +13,7 @@ To be able to put the .zsh file in the .config/zsh directory we add the followin
 
 ## Install requirements:
 
-pacman -S qutebrowser zsh
+pacman -S qutebrowser zsh zsh-syntax-highlighting
 
 ## How I collect my dotfiles?
 

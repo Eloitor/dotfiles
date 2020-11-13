@@ -1,11 +1,23 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-neofetch
+#neofetch
 
 # FOR TESTING: exec zsh
 # Edit config: open ~/.zshrc in using the default editor specified in $EDITOR
 alias ec="$EDITOR $HOME/.config/zsh/.zshrc"
+timezsh() {
+	shell=${1-$SHELL}
+	for i in $(seq 1 10); do
+		/usr/bin/time --format="real %e\tuser %U\tsys %S" $shell -i -c exit; done
+}
 
 
 # PLUGINS
@@ -16,9 +28,10 @@ compinit
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # git_super_status
-source ~/.config/zsh/plugins/zsh-git-prompt/zshrc.sh
+# source ~/.config/zsh/plugins/zsh-git-prompt/zshrc.sh
 # source ~/.config/zsh/ohmyzsh/lib/git.zsh
 # source ~/.config/zsh/ohmyzsh/plugins/git/git.plugin.zsh
 
@@ -101,10 +114,12 @@ alias ls="ls --color=auto"
 alias vim="nvim"
 alias ..="cd .."
 alias ...="cd ../.."
-
+alias -g L="| less"
+alias -g C="|wc -l"
 # Sufix aliases. (default program to open this extensions)
 alias -s pdf=zathura
 alias -s {cs,ts,html}=code
+alias -s {tex,md,txt}=nvim
 
 # Arrow keys
 bindkey '^[[A' history-substring-search-up
@@ -113,4 +128,8 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 
+# Must be sourced at the end of the .zshrc file.
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.config/zsh/plugins/p10k.zsh ]] || source ~/.config/zsh/plugins/p10k.zsh
