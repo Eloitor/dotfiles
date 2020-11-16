@@ -24,7 +24,8 @@ ln -sfT /bin/dash /bin/sh
 
   This is set in the config for Alacritty.
 To be able to put the .zshrc file in the .config/zsh directory we add the following to ~/.profile
-```export ZDOTDIR="$HOME/.config/zsh"
+```
+export ZDOTDIR="$HOME/.config/zsh"
 ```
 Install:
 ```
@@ -33,8 +34,10 @@ pacman -S zsh
 
 ### Qutebrowser
 
+Install:
+```
 pacman -S qutebrowser
-
+```
 
 ### Alacritty
 
@@ -43,7 +46,7 @@ pacman -S qutebrowser
 I use rcm to collect my configuration files in one folder.
 
 For example if I want to backup the configuration for zsh:
-
+```
 mkrc -S ~/.config/zsh
-
+```
 (With the -S option rcm treats the full directory as a file)
