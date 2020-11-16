@@ -35,6 +35,7 @@ c.colors.webpage.darkmode.enabled = True
 c.content.cookies.accept = "never"
 ## We can set cookies options for particular sites.
 config.set('content.cookies.accept', 'all', '*.github.com/*')
+config.set('content.cookies.accept', 'all', '*.youtube.com/*')
 
 # User agent to send. See https://qutebrowser.org/doc/help/settings.html#content.headers.user_agent
 # Type: FormatString

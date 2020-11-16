@@ -1,19 +1,42 @@
 # My Dotfiles
 
-I try to minimize what is directly on ~/
-To be able to put the .zsh file in the .config/zsh directory we add the following to ~/.profile
-
-`export ZDOTDIR="$HOME/.config/zsh"`
-
-
 ## Included dotfiles
 
-	* qutebrowser
-	* zsh (WIP)
+   * .profile (for the login shell)
 
-## Install requirements:
+   * zsh (a great interactive shell)
+   * alacritty (terminal)
+   * qutebrowser (web browser with vim keybindings)
 
-pacman -S qutebrowser zsh zsh-syntax-highlighting
+
+I try to minimize what is directly on ~/
+
+### My login shell is dash
+  On login, it reads ~/.profile.
+
+To make dash your login shell you have to run:
+```
+pacman -S dash
+ln -sfT /bin/dash /bin/sh
+```
+
+### My interactive shell is zsh
+
+  This is set in the config for Alacritty.
+To be able to put the .zshrc file in the .config/zsh directory we add the following to ~/.profile
+```export ZDOTDIR="$HOME/.config/zsh"
+```
+Install:
+```
+pacman -S zsh
+```
+
+### Qutebrowser
+
+pacman -S qutebrowser
+
+
+### Alacritty
 
 ## How I collect my dotfiles?
 

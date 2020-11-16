@@ -133,3 +133,6 @@ source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/zsh/plugins/p10k.zsh ]] || source ~/.config/zsh/plugins/p10k.zsh
+
+# Created by `userpath` on 2020-11-16 13:54:26
+export PATH="$PATH:/home/eloi/.local/bin"
