@@ -32,11 +32,10 @@ autoload -Uz compinit; compinit             # Initialize completion for the curr
 _comp_options+=(globdots)                   # Autocomplete hidden files
 
 source ~/.config/zsh/plugins/completion.zsh # Autocomplete
-# source ~/.config/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh # Autocomplete
 
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh # Show previously typed commands
 source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme #PS1
+source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme #PS1
 
 
 source ~/.config/zsh/plugins/vim.zsh       # VIM key bindings
