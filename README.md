@@ -4,7 +4,7 @@ This repository contains a collection of my configuration files for Linux progra
 
 ## General installation
 ```
-git clone ...
+git clone https://github.com/Eloitor/dotfiles
 cd
 git submodule update --init
 ```
