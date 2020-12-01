@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -5,14 +8,9 @@
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-#neofetch
+# neofetch
 
 # FOR TESTING: exec zsh
-# Edit config: open ~/.zshrc in using the default editor specified in $EDITOR
-alias ec="$EDITOR $HOME/.config/zsh/.zshrc"
 timezsh() {
 	shell=${1-$SHELL}
 	for i in $(seq 1 10); do
@@ -26,12 +24,12 @@ compinit
 
 # source ~/.config/zsh/ohmyzsh/plugins/docker/_docker
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+# source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # git_super_status
-# source ~/.config/zsh/plugins/zsh-git-prompt/zshrc.sh
+source ~/.config/zsh/plugins/zsh-git-prompt/zshrc.sh
 # source ~/.config/zsh/ohmyzsh/lib/git.zsh
 # source ~/.config/zsh/ohmyzsh/plugins/git/git.plugin.zsh
 
@@ -56,12 +54,6 @@ vcs_info_wrapper() {
   fi
 }
 
-PS1=" %B%~%{$fg[red]%}"
-PS1+=$'$(git_super_status) '
-#PS1+=$'$(vcs_info_wrapper)'
-PS1+=">>%{$reset_color%}%b "
-export PS1
-
 
 # Automatic navigation to files
 #exec ~/.config/zsh/plugins/z/z.sh
@@ -74,7 +66,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt beep
-bindkey -v
+# bindkey -v
 
 # myemacsclient () {
 #    emacsclient -n -e "(if (> (length (frame-list)) 1) 't)" | grep -q t
@@ -112,12 +104,14 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 alias ls="ls --color=auto"
 alias vim="nvim"
+alias v="nvim"
 alias ..="cd .."
 alias ...="cd ../.."
 alias -g L="| less"
 alias -g C="|wc -l"
 # Sufix aliases. (default program to open this extensions)
 alias -s pdf=zathura
+alias -s exe=wine
 alias -s {cs,ts,html}=code
 alias -s {tex,md,txt}=nvim
 
@@ -136,3 +130,5 @@ source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Created by `userpath` on 2020-11-16 13:54:26
 export PATH="$PATH:/home/eloi/.local/bin"
+
+# eval $(pandoc --bash-completion)

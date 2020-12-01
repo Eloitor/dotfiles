@@ -7,9 +7,6 @@
 [submodule "config/zsh/plugins/zsh-syntax-highlighting"]
 	path = config/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "config/zsh/plugins/zsh-completions"]
-	path = config/zsh/plugins/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions
 [submodule "config/zsh/plugins/zsh-history-substring-search"]
 	path = config/zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
@@ -22,3 +19,6 @@
 [submodule "config/zsh/plugins/zsh-git-prompt"]
 	path = config/zsh/plugins/zsh-git-prompt
 	url = https://github.com/zsh-git-prompt/zsh-git-prompt.git
+[submodule "config/awesome/awesome-wm-widgets"]
+	path = config/awesome/awesome-wm-widgets
+	url = https://github.com/streetturtle/awesome-wm-widgets.git
