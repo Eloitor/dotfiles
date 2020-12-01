@@ -2,10 +2,12 @@
 
 This repository contains a collection of my configuration files for Linux programs. They can be used in any Linux distribution.
 
+> I try to mantain the home directory as clean as possible.
+
 ## General installation
-```
+```bash
 git clone https://github.com/Eloitor/dotfiles
-cd
+cd dotfiles
 git submodule update --init
 ```
 
@@ -21,19 +23,26 @@ git submodule update --init
 At startup, the login shell runs `~/.profile` (`~/.zprofile` if you are using zsh). This runs `startx` with the argument `~/.config/X11/xinitrc`, which loads the window manager.
 
 
-## How to change your login shell to dash:
-```sh
-# pacman -S dash
-# ln -sfT /bin/dash /bin/sh
-```
+## How to change your login shell to dash
+1. Install dash
+>**Arch** based distributions:  
+>```bash
+>sudo pacman -S dash
+>```
+2.  Make a symbolic link from `/bin/dash` to `/bin/sh` 
+> ```bash
+> sudo ln -sfT /bin/dash /bin/sh
+>```
 
-## How I collect my dotfiles?
+## How to collect your dotfiles?
 
-I use rcm to collect my configuration files in one folder.
+You can use rcm to collect your configuration files in one folder.
 
-For example if I want to backup the configuration for zsh:
-```
+For example if you want to backup the configuration for zsh, just run:
+```bash
 mkrc -S ~/.config/zsh
 ```
-(With the -S option rcm treats the full directory as a file)
-xkb-switch-gitAUR
+
+Now the `zsh` folder inside `~/.config` is just a symbolic link to `~/.dotfiles/config/zsh`.
+
+>With the -S option rcm treats the full directory as a file)
