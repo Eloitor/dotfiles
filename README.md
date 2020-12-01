@@ -16,22 +16,14 @@ git submodule update --init
    - qutebrowser (web browser with vim keybindings)
 
 ## The configuration files that are read at startup are:
-1. OpenRC
-2. ~/.profile (.zprofile if you are using zsh as login shell)
-
-    startx
-
-3. ~/.config/X11/xinitrc
+At startup, the login shell runs `~/.profile` (`~/.zprofile` if you are using zsh). This runs `startx` with the argument `~/.config/X11/xinitrc`, which loads the window manager.
 
 
-
-To make dash your login shell you have to run:
+## How to change your login shell to dash:
 ```
 # pacman -S dash
 # ln -sfT /bin/dash /bin/sh
 ```
-
-
 
 ## How I collect my dotfiles?
 
