@@ -39,6 +39,14 @@ export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 export PATH="$PATH:/home/eloi/.local/bin"
 
 
-#if [[ "$(tty)" = "/dev/tty1" ]]; then
-#	pgrep bspwm || startx "$XDG_CONFIG_HOME/X11/xinitrc"
-#fi
+if [ "$(tty)" = "/dev/tty1" ]; then
+	pgrep awesome || startx "$XDG_CONFIG_HOME/X11/xinitrc"
+fi
+
+
+## Keyboard layouts:
+# Catalan
+# Arabic (Phonetic)
+setxkbmap -layout "es,ara" -variant "cat,buckwalter"
+
+export PATH="$HOME/.elan/bin:$PATH"
