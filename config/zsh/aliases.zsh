@@ -1,4 +1,5 @@
 alias ls="ls --color=auto"
+alias la="ls -A"
 alias vim="nvim"
 alias v="nvim"
 alias ..="cd .."

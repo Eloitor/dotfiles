@@ -33,20 +33,17 @@ export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 
 # Visual Studio Code (undocumented)
-export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
+export VSCODE_PORTABLE=$XDG_DATA_HOME/vscode
 
 # Created by `userpath` on 2020-11-16 13:54:26
 export PATH="$PATH:/home/eloi/.local/bin"
 
+export PATH="$HOME/.elan/bin:$PATH"
 
+# We can use a different window manager for each tty
 if [ "$(tty)" = "/dev/tty1" ]; then
 	pgrep awesome || startx "$XDG_CONFIG_HOME/X11/xinitrc"
 fi
-
-
-## Keyboard layouts:
-# Catalan
-# Arabic (Phonetic)
-setxkbmap -layout "es,ara" -variant "cat,buckwalter"
-
-export PATH="$HOME/.elan/bin:$PATH"
+if [ "$(tty)" = "/dev/tty2" ]; then
+	pgrep awesome || startx "$XDG_CONFIG_HOME/X11/xinitrc"
+fi
