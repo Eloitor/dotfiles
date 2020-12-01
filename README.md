@@ -1,7 +1,7 @@
 # My Dotfiles
+
 This repository contains a collection of my configuration files for Linux programs. They can be used in any Linux distribution.
 
-I try to minimize what is directly on ~/
 ## General installation
 ```
 git clone ...
@@ -11,11 +11,13 @@ git submodule update --init
 
 ## Included dotfiles
    - .profile (for the login shell)
+   - .config/X11/xinitrc (for graphics)
    - zsh (a great interactive shell, with a lot of plugins)
    - alacritty (terminal)
    - qutebrowser (web browser with vim keybindings)
 
-## The configuration files that are read at startup are:
+## At startup:
+
 At startup, the login shell runs `~/.profile` (`~/.zprofile` if you are using zsh). This runs `startx` with the argument `~/.config/X11/xinitrc`, which loads the window manager.
 
 
