@@ -22,7 +22,7 @@ At startup, the login shell runs `~/.profile` (`~/.zprofile` if you are using zs
 
 
 ## How to change your login shell to dash:
-```
+```sh
 # pacman -S dash
 # ln -sfT /bin/dash /bin/sh
 ```
