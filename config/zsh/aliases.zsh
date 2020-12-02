@@ -4,7 +4,7 @@ alias vim="nvim"
 alias v="nvim"
 alias ..="cd .."
 alias ...="cd ../.."
-alias -g L="| less"
+alias -g L="| less -r"
 alias -g C="|wc -l"  # Count lines
 
 # Sufix aliases. (default program to open this extensions)
