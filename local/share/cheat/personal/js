@@ -1,0 +1,6 @@
+---
+syntax: javasxript
+tags: [ array, map ]
+---
+// To map ovr an array:
+const squares = [1, 2, 3, 4].map(x => x*x);

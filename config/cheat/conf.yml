@@ -1,0 +1,10 @@
+cheatpaths:
+ - name: personal
+   path: ~/.local/share/cheat/personal
+   tags: [ personal ]
+   readonly: false
+
+ - name: community
+   path: /usr/share/cheat/cheatsheets/community
+   tags: [ community ]
+   readonly: true
