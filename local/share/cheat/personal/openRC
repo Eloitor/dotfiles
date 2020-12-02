@@ -1,0 +1,12 @@
+# Check status
+rc-status
+
+# Starting / restarting a service
+rc-service myservice start
+rc-service myservice restart
+
+# Services are stored in:
+/etc/conf.d
+
+# Runlevels are stored in:
+/etc/runlevels
