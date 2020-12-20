@@ -2,14 +2,15 @@
 
 This repository contains a collection of my configuration files for Linux programs. They can be used in any Linux distribution.
 
-> I try to mantain the home directory as clean as possible.
+>I try to mantain the home directory as clean as possible.
 
 ## General installation
+
 ```bash
-git clone https://github.com/Eloitor/dotfiles
-cd dotfiles
-git submodule update --init
+git clone --recursive https://github.com/Eloitor/dotfiles ~/.dotfiles
 ```
+
+> Note: You can clone it into a folder diferent than "~/.dotfiles", for example "~/.dotfiles-eloi". In that case you will need to use "rcup -d ~/.dotfiles-eloi" instead of "rcup".
 
 ## Included dotfiles
    - .profile (for the login shell)
@@ -22,14 +23,25 @@ git submodule update --init
 
 At startup, the login shell runs `~/.profile` (`~/.zprofile` if you are using zsh). This runs `startx` with the argument `~/.config/X11/xinitrc`, which loads the window manager.
 
+## REQUIREMENTS
+To map caps to Mod/Escape
+* xcape
+
+## What I'm planning:
+* Lightdm / SDDM compatible
+* I'll try to setup a different desktop environment for each tty:
+
+tty1 | tty2 | tty3 | tty4
+---|--|--|--
+awesome | awesome + XFCE | i3 | plasma
 
 ## How to change your login shell to dash
 1. Install dash
->**Arch** based distributions:  
+>**Arch** based distributions:
 >```bash
 >sudo pacman -S dash
 >```
-2.  Make a symbolic link from `/bin/dash` to `/bin/sh` 
+2.  Make a symbolic link from `/bin/dash` to `/bin/sh`
 > ```bash
 > sudo ln -sfT /bin/dash /bin/sh
 >```
