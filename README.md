@@ -10,7 +10,7 @@ This repository contains a collection of my configuration files for Linux progra
 git clone --recursive https://github.com/Eloitor/dotfiles ~/.dotfiles
 ```
 
-> Note: You can clone it into a folder diferent than "~/.dotfiles", for example "~/.dotfiles-eloi". In that case you will need to use "rcup -d ~/.dotfiles-eloi" instead of "rcup".
+> Note: You can clone it into a folder diferent than `~/.dotfiles`, for example `~/.dotfiles-eloi`. In that case you will need to use "rcup -d ~/.dotfiles-eloi" instead of "rcup".
 
 ## Included dotfiles
    - .profile (for the login shell)
