@@ -4,13 +4,19 @@ This repository contains a collection of my configuration files for Linux progra
 
 >I try to mantain the home directory as clean as possible.
 
-## General installation
+## Installation
 
+1. Download my dotfiles
 ```bash
 git clone --recursive https://github.com/Eloitor/dotfiles ~/.dotfiles
 ```
-
-> Note: You can clone it into a folder diferent than `~/.dotfiles`, for example `~/.dotfiles-eloi`. In that case you will need to use "rcup -d ~/.dotfiles-eloi" instead of "rcup".
+> Note: You can clone it into a folder diferent than `~/.dotfiles`, for example `~/.dotfiles-eloi`. In that case you will need to use `rcup -d ~/.dotfiles-eloi` instead of `rcup`.
+2. Install `rcm` in your system.
+3. Install the dotfiles that you want
+|                |     |
+| --             | --  |
+| rcup zsh       | |
+| rcup alacritty |     |
 
 ## Included dotfiles
    - .profile (for the login shell)
