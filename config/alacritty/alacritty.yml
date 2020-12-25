@@ -319,7 +319,7 @@ cursor:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /bin/zsh
+  program: zsh
 #  args:
 #    - --login
 
