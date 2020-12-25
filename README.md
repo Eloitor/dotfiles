@@ -20,7 +20,14 @@ git clone --recursive https://github.com/Eloitor/dotfiles ~/.dotfiles
 | rcup zsh zshrc | |
 | rcup alacritty |     |
 
+
 ## Included dotfiles
+
+  See all the symlinks that it will make:
+   ```bash
+   lsrc
+   ```
+
    - .profile (for the login shell)
    - .config/X11/xinitrc (for graphics)
    - zsh (a great interactive shell, with a lot of plugins)
