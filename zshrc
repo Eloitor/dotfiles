@@ -54,3 +54,5 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 # Must be sourced at the end of the .zshrc file.
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH=~/.local/share/npm-packages/bin:/home/eloi/.local/share/npm-packages/bin:/home/eloi/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/bin:/home/eloi/.local/bin/__pycache__:/home/eloi/.local/bin:/home/eloi/.local/bin
+export PATH=~/.gem/ruby/2.7.0/bin:/home/eloi/.local/share/npm-packages/bin:/home/eloi/.local/share/npm-packages/bin:/home/eloi/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/bin:/home/eloi/.local/bin/__pycache__:/home/eloi/.local/bin:/home/eloi/.local/bin

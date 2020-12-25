@@ -18,3 +18,5 @@ xmodmap -e 'keycode 135 = Super_R'
 # Catalan
 # Arabic (Phonetic)
 setxkbmap -layout "es,ara" -variant "cat,buckwalter"&
+
+sxhkd&

@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/eloi/.pki/nssdb'
+let g:netrw_dirhist_7='/home/eloi/.pki'
+let g:netrw_dirhist_6='/home/eloi/.pki/nssdb'
+let g:netrw_dirhist_5='/home/eloi/.pki'
+let g:netrw_dirhist_4='/home/eloi/org/brain'
+let g:netrw_dirhist_3='/home/eloi/.dillo'
+let g:netrw_dirhist_2='/etc/lightdm'
+let g:netrw_dirhist_1='/home/eloi/.config/alacritty'
+let g:netrw_dirhist_0='/home/eloi/.config/awesome/freedesktop'
+let g:netrw_dirhist_9='/home/eloi/.config/alacritty'

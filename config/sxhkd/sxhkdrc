@@ -1,5 +1,13 @@
 # Basic binds
-super + Return
-	$TERMINAL
+
 super + d
 	dmenu_run
+super + Return
+	$TERMINAL
+super + q
+	$BROWSER
+super + c
+	client -k
+
+super + alt + {a, r, t, h, n, c, j, p}
+	$TERMINAL -e {alsamixer, lf, transmission-remote-cli, htop, nvim, calcurse, nvim $XDG_DATA_HOME/vimwiki/index.wiki, pulsemixer}

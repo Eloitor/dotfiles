@@ -1,0 +1,11 @@
+---
+syntax: bash
+tags:
+---
+
+# Config files are stored in
+~/.config
+
+# Own binaries in
+~/.local/share/bin
+/usr/loacal/bin

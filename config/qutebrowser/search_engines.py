@@ -6,5 +6,6 @@ c.url.searchengines = {
     'gr': 'http://github.com/search?q={}',
     'gu': 'https://github.com/search?q={}&type=Users',
     'r': 'https://reddit.com/r/{}',
-    'y': 'https://www.youtube.com/results?search_query={}&search=Search'
+    'y': 'https://www.youtube.com/results?search_query={}&search=Search',
+    'rd': 'https://woerterbuch.reverso.net/deutsch-spanisch/{}'
 }

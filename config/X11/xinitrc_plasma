@@ -1,0 +1,3 @@
+#!/bin/sh
+export DESTOP_SESSION=plasma
+exec startplasma-x11
