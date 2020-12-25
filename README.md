@@ -15,8 +15,8 @@ git clone --recursive https://github.com/Eloitor/dotfiles ~/.dotfiles
 3. Install the dotfiles that you want
 |                |     |
 | --             | --  |
-| rcup zsh       | |
-| rcup alacritty |     |
+| rcup -S zsh       | |
+| rcup -S alacritty |     |
 
 ## Included dotfiles
    - .profile (for the login shell)
