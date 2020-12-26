@@ -1,1 +1,1 @@
-SYMLINK_DIRS="zsh alacritty awesome"
+SYMLINK_DIRS="zsh alacritty awesome nvim qutebrowser X11 fonts filezilla"
