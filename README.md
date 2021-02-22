@@ -2,6 +2,9 @@
 
 This repository contains a collection of my configuration files for Linux programs. They can be used in any Linux distribution.
 
+I use it mainly in NixOS. A detailed explanation will be available at /config/nixpkgs/README.md.
+
+
 ## Installation
 
 1. Download my dotfiles
