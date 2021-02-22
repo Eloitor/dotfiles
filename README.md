@@ -10,15 +10,16 @@ git clone --recursive https://github.com/Eloitor/dotfiles ~/.dotfiles
 ```
 > Note: You can clone it into a folder diferent than `~/.dotfiles`, for example `~/.dotfiles-eloi`.
 2. Install `rcm` in your system.
-3. Add configuration file ~/.rcrc
+3. Add configuration file `~/.rcrc`
   ```bash
   rcup rcrc
   ```
 4. Install the dotfiles that you want
-|                |     |
-| --             | --  |
-| rcup zsh zshrc | |
-| rcup alacritty |     |
+
+```bash
+rcup zsh zshrc
+rcup alacritty
+```
 
 
 ## Included dotfiles
